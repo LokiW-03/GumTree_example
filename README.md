@@ -10,23 +10,24 @@
 
 #### AST mapping in pdf:
 
-0. Install graphviz:
+1. Install graphviz:
+
     Linux:
-        ``` bash
+        ```
         sudo apt install graphviz
         ```
 
     MacOS:
-        ```bash
+        ```
         brew install graphviz
         ```
 
-1. Generate the dot file:
+2. Generate the dot file:
     ``` bash
     gumtree-4.0.0-beta3/bin/gumtree dotdiff Test.java revision/Test.java > tree.dot
     ```
 
-2. Generate the pdf:
+3. Generate the pdf:
     ```bash
     dot -Tpdf tree.dot -o output.pdf
     ```
