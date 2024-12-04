@@ -1,0 +1,145 @@
+===
+match
+---
+PrimitiveType: int [43,46]
+PrimitiveType: int [44,47]
+===
+match
+---
+Modifier: public [25,31]
+Modifier: private [25,32]
+===
+match
+---
+SimpleName: foo [39,42]
+SimpleName: foo [40,43]
+===
+match
+---
+SimpleName: String [32,38]
+SimpleName: String [33,39]
+===
+match
+---
+SimpleName: i [47,48]
+SimpleName: i [48,49]
+===
+match
+---
+StringLiteral: "Foo!" [79,85]
+StringLiteral: "Foo!" [121,127]
+===
+match
+---
+InfixExpression [64,70]
+InfixExpression [65,71]
+===
+match
+---
+SingleVariableDeclaration [43,48]
+SingleVariableDeclaration [44,49]
+===
+match
+---
+TypeDeclaration [1,95]
+TypeDeclaration [1,137]
+===
+match
+---
+MethodDeclaration [25,92]
+MethodDeclaration [25,134]
+===
+match
+---
+SimpleName: Test [14,18]
+SimpleName: Test [14,18]
+===
+match
+---
+CompilationUnit [0,95]
+CompilationUnit [0,137]
+===
+match
+---
+INFIX_EXPRESSION_OPERATOR: == [66,68]
+INFIX_EXPRESSION_OPERATOR: == [67,69]
+===
+match
+---
+Block [50,92]
+Block [51,134]
+===
+match
+---
+Modifier: public [1,7]
+Modifier: public [1,7]
+===
+match
+---
+SimpleName: i [64,65]
+SimpleName: i [65,66]
+===
+match
+---
+ReturnStatement [72,86]
+ReturnStatement [114,128]
+===
+match
+---
+SimpleType [32,38]
+SimpleType [33,39]
+===
+match
+---
+TYPE_DECLARATION_KIND: class [8,13]
+TYPE_DECLARATION_KIND: class [8,13]
+===
+match
+---
+IfStatement [60,86]
+IfStatement [61,128]
+===
+match
+---
+NumberLiteral: 0 [69,70]
+NumberLiteral: 0 [70,71]
+===
+update-node
+---
+Modifier: public [25,31]
+replace public by private
+===
+insert-tree
+---
+ReturnStatement [73,86]
+    StringLiteral: "Bar" [80,85]
+to
+IfStatement [60,86]
+at 1
+===
+insert-node
+---
+IfStatement [101,128]
+to
+IfStatement [60,86]
+at 2
+===
+insert-tree
+---
+InfixExpression [105,112]
+    SimpleName: i [105,106]
+    INFIX_EXPRESSION_OPERATOR: == [107,109]
+    PrefixExpression [110,112]
+        PREFIX_EXPRESSION_OPERATOR: - [110,111]
+        NumberLiteral: 1 [111,112]
+to
+IfStatement [101,128]
+at 0
+===
+move-tree
+---
+ReturnStatement [72,86]
+    StringLiteral: "Foo!" [79,85]
+to
+IfStatement [101,128]
+at 1
